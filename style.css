@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+/* Webfont: Flaviotte-Regular */
+@font-face {
+    font-family: 'Flaviotte';
+    src: url('Flaviotte.woff2') format('woff2'), /* Modern Browsers */
+         url('Flaviotte.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* Color Palette : https://colorhunt.co/palette/01204e028391f6dcacfeae6f
+
+Darkblue : #01204E
+Cyan : #028391
+Beige : #F6DCAC
+Orange : #FEAE6F
+*/
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #01204E ;
+   }    
+
+/* --------- Navigation ----------- */
+nav {
+    position:fixed; /* fixe à la fenêtre et non à la page */
+    z-index: 1000; /* on veut que la barre de navigation soit au-dessus de tout */
+    width: 100%; /* toute la largeur de la page */
+    height: 50px;
+    background: #01204E; /* pour tester, on peut mettre #000 */
+   }
+   nav ul {
+    width: 100%; /* 100% du parent (nav ici) */
+    height: 100%;
+    list-style-type: none; /* aucun jeton à gauche dans cette liste */
+    display: flex; /* ces 3 attributs permettent de centrer le tout */
+    justify-content: center;
+    align-items: center;
+   }
+   nav li {
+    margin: 0 15px;
+    font-family: 'EB Garamond';
+   }
+   nav a {
+    text-decoration: none; /* on enlève le souligné des liens */
+    font-size: 20px;
+    color: #F6DCAC;
+    text-transform: capitalize; /* majuscules */
+   }
+   nav a:hover {
+    text-decoration: underline;
+   }
+   /* lorsque l’écran aura une largeur < 550px */
+   /* responsive -> les éléments auront des dimensions plus petites/adaptées */
+   @media screen and (max-width: 550px){
+    nav li {
+    margin: 0 8px;
+    }
+    nav a {
+    font-size: 15px;
+    }
+   }
+
+
+/*------------ Accueil + Fondu ----------*/
+.accueil {
+    height: 800px;
+    display: flex;
+    overflow: hidden;
+    }
+    #emoji{
+     height: 24px;
+     width: 24px;
+    }
+    .bloc-gauche-accueil {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background: #028391;
+    box-shadow: 90px 0 100px 100px #028391;
+    }
+    h1 {
+    color: #FEAE6F;
+    font-family: 'Flaviotte';
+    font-size: 90px;
+    padding-top: 200px;
+    padding-bottom: 20px;
+    margin-left: 8vw;
+    white-space: nowrap;
+    }
+    p {
+    font-family: 'EB Garamond';
+    }
+    .accueil p {
+    color: #F6DCAC;
+    font-size: 30px;
+    text-align: justify;
+    width: 600px;
+    margin-left: 8vw;
+    line-height: 1.3;
+    font-size: 'PlayfairDisplay';
+    }
+    .cont-btn-home {
+    display: flex;
+    }
+    .btn-accueil {
+    font-size: 18px;
+    text-align: center;
+    color: #F6DCAC;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 40px;
+    border: 1px solid #F6DCAC;
+    width: 150px;
+    cursor: pointer;
+    }
+    .btn-acceuil:hover {
+        transition: all 0.2s ease-in-out;
+        color: #000;
+        background: #F1F1F1;
+        }
+        .b1 {
+        margin-left: 8vw;
+        }
+        .b1:hover{
+            transition: all 0.2s ease-in-out;
+            color:#01204E;
+            background-color: #F6DCAC;
+        }
+        .b2 {
+        margin-left: 10px;
+        }
+        .b2:hover{
+            transition: all 0.2s ease-in-out;
+            color:#01204E;
+            background-color: #F6DCAC;
+        }
+        .bloc-droit-accueil {
+        background-image: url(ressources/accueil.jpg);
+        width: 100%;
+        height: 100%;
+        background-position: 15% 50%;
+        }
+
+/* -------- Médias accueil fondu ----- */
+@media screen and (max-width: 1350px) {
+    .bloc-gauche-accueil {
+    width: 60%;
+    }
+    .bloc-droit-accueil {
+    background-position: 72% 10%;
+    }
+    }
+    @media screen and (max-width: 750px) {
+    .accueil {
+    height: 500px;
+    }
+    h1 {
+    font-size: 50px;
+    padding-top: 120px;
+    }
+    .accueil p {
+    font-size :25px;
+    margin-bottom: 10px;
+    }
+    .btn-accueil {
+    font-size: 18px;
+    padding: 12px;
+    margin-top: 20px;
+    }
+    .bloc-gauche-accueil {
+    width: 50%;
+    }
+    }
+    @media screen and (max-width: 550px) {
+    .accueil {
+    height: 450px;
+    }
+    h1 {
+    font-size: 40px;
+    padding-top: 100px;
+    margin-left: 2vw;
+    }
+    .accueil p {
+    font-size: 20px;
+    margin-left: 2vw;
+    margin-bottom: 15px;
+    }
+    .btn-accueil {
+    padding: 8px;
+    font-size: 16px;
+    }
+    .b1 {
+    margin-left: 2vw;
+    }
+    .b2 {
+    margin-left: 10px;
+    }
+    .bloc-gauche-accueil {
+    box-shadow: 20px 0 100px 100px #000;
+    width: 40%;
+    }
+    }
+        
+/*------------- Section infos ---------------*/
+.titre-section-info {
+    color: #FEAE6F;
+    text-align: center;
+    font-size: 65px;
+    padding: 50px 20px 120px;
+    font-family: 'Flaviotte';
+    }
+    .section-info {
+    display:flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 0 auto;
+    background: #01204E;
+    position: relative;
+    }
+    #photoinfo {
+        border-radius: 30px 30px 0 0;
+    }
+    .carte-info {
+    width: 350px;
+    height: auto;
+    margin: 0 20px 80px;
+    
+    position: relative;
+    z-index:100;
+    background-color: #028391;
+    border-radius: 30px;
+    transition-property: width box-shadow;
+    transition-duration: .2s;
+    }
+    .carte-info:hover {
+        width: 370px;
+        box-shadow: 0px 0px 10px 1px #028391;
+    }
+    .container-photo-info img {
+    width: 100%;
+    height: 500px;
+    object-fit: fill;
+    
+    }
+    .carte-info h2 {
+    color: #F6DCAC;
+    text-align:center;
+    font-size: 25px;
+    padding: 15px 15px;
+    }
+    .carte-info p {
+    color: #F6DCAC;
+    text-align:center;
+    font-size: 21px;
+    padding: 0 5px 15px;
+    }
+    .deco-infos{
+        position: absolute;
+        z-index: -1;
+        top: -70px;
+        left: -100px;
+        }
+        /*------------- Médias section infos ---------------*/
+        @media screen and (max-width: 1400px) {
+        .deco-infos {
+        display: none;
+        }
+        }
+        @media screen and (max-width: 1000px) {
+        .titre-section-info {
+        font-size: 50px;
+        }
+        }
+        @media screen and (max-width: 550px) {
+        .titre-section-info {
+        font-size: 30px;
+        padding: 40px 20px 40px;
+        }
+        .carte-info {
+        margin: 0 10px 45px;
+        }
+        }
+    
